@@ -1,0 +1,1 @@
+A simple book a seat project made using html, css and javascript
