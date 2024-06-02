@@ -1,0 +1,82 @@
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  color:white;
+}
+#title{
+  display: flex;
+  background-color: #27125d;
+  height:10vh;
+  justify-content: space-around;
+  
+}
+#select-movie,#seats{
+  background-color: #120b2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom:1%;
+}
+#info{
+padding:10px;
+  background-image: linear-gradient(90deg,#7b146d, #414283,#1b8a9e);
+text-align: center;
+}
+#seats{
+  margin: 0 auto;
+}
+#availability{
+  display: flex;
+ 
+}
+ 
+.container{
+  margin-top: 6%;
+}
+.seat {
+    background-color: #444451;
+    height: 26px;
+    width: 32px;
+    margin: 3px;
+    font-size: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  /* #seats>p>span:before{
+  content: '\2605';
+  } */
+  .avl{
+     
+    background-color:white;
+    margin-right: 10px;
+  }
+
+  .res{
+    background-color:#b7136c;
+  }
+  .sel{
+    background-color:#06fcd5;
+  }
+
+  .seat.selected {
+    background-color: #06fcd5
+  }
+  
+  .seat.sold {
+    background-color:#b7136c;
+  }
+  
+  .row{
+    display: flex;
+  }
+
+  /***media query***/
+  @media only screen and (max-width: 500px) {
+    body{
+      font-size:0.7rem;
+    }
+  #availability{
+    flex-direction: column;
+  }
+  }
