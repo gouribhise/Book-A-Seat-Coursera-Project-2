@@ -1,6 +1,6 @@
  
 const container = document.querySelector(".container");
-const seats = document.querySelectorAll(".row .seat:not(.sold)");
+const seats = document.querySelectorAll(".row .seat:not(.sold)"); 
 const movieSelect = document.getElementById("movie");
 const booked=document.getElementById("seats-booked")
 const amount=document.getElementById("price")
@@ -82,4 +82,11 @@ container.addEventListener("click", (e) => {
  
   }  
   updateSelectedCount()
+
+  //gives alert message if user click on sold seat
+  if(e.target.classList.contains("sold")){
+   alert("This seat is already booked! Please book other seat.")
+  }
   })
+
+   
