@@ -9,7 +9,9 @@ const ticket=document.getElementById("ticket")
 
 function start(){
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+  const selectedMoviePrice=localStorage.getItem("selectedMoviePrice");
 
+console.log('selectedmovie price:',selectedMoviePrice)
   //show previously selected seats
   if (selectedSeats !== null && selectedSeats.length > 0) 
     {
@@ -26,9 +28,9 @@ function start(){
  
   if(selectedSeats.length>=1)
   {
-    const totalAmount=selectedSeats.length*localStorage.getItem("selectedMoviePrice");
+    const totalAmount=selectedSeats.length*selectedMoviePrice
     booked.innerHTML=selectedSeats.length
-    ticket.innerHTML=localStorage.getItem("selectedMoviePrice")
+    ticket.innerHTML=selectedMoviePrice
     amount.innerHTML="RS "+totalAmount
   }else
   {
@@ -43,6 +45,8 @@ function start(){
  //correct 
  function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");  
+  const selectedMoviePrice=localStorage.getItem("selectedMoviePrice");
+
   const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
   const totalSeats=selectedSeats.length
  
@@ -51,9 +55,9 @@ function start(){
 
   if(totalSeats>=1)
   {
-    const totalAmount=totalSeats*localStorage.getItem("selectedMoviePrice");
+    const totalAmount=totalSeats*selectedMoviePrice
     booked.innerHTML=totalSeats
-    ticket.innerHTML=localStorage.getItem("selectedMoviePrice")
+    ticket.innerHTML=selectedMoviePrice
     amount.innerHTML="RS "+totalAmount
   }
   else
